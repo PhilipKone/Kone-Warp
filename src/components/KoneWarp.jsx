@@ -1106,39 +1106,47 @@ export default function KoneWarp() {
 
         </div>
 
-        {/* Tab Navbar */}
+        {/* Tab Navbar (Floating Instagram Style with Icon + Text) */}
         <nav className="app-bottom-navbar">
           <button 
             className={`navbar-tab-item ${activeTab === 'ride' ? 'active' : ''}`}
             onClick={() => { setActiveTab('ride'); setDrawerOpen(true); }}
             aria-label="Warp Ride"
           >
-            <Navigation size={20} />
-            <span>Warp Ride</span>
+            <div className="mobile-icon-pill">
+              <Navigation size={18} />
+              <span className="tab-label">Ride</span>
+            </div>
           </button>
           <button 
             className={`navbar-tab-item ${activeTab === 'delivery' ? 'active' : ''}`}
             onClick={() => { setActiveTab('delivery'); setDrawerOpen(false); }}
             aria-label="Warp Market"
           >
-            <ShoppingBag size={20} />
-            <span>Market</span>
+            <div className="mobile-icon-pill">
+              <ShoppingBag size={18} />
+              <span className="tab-label">Market</span>
+            </div>
           </button>
           <button 
             className={`navbar-tab-item ${activeTab === 'vision' ? 'active' : ''}`}
             onClick={() => { setActiveTab('vision'); }}
             aria-label="OpenCV Vision"
           >
-            <Camera size={20} />
-            <span>CV Vision</span>
+            <div className="mobile-icon-pill">
+              <Camera size={18} />
+              <span className="tab-label">Vision</span>
+            </div>
           </button>
           <button 
             className={`navbar-tab-item ${activeTab === 'activity' ? 'active' : ''}`}
             onClick={() => { setActiveTab('activity'); }}
             aria-label="Telemetry Activity"
           >
-            <Activity size={20} />
-            <span>Telemetry</span>
+            <div className="mobile-icon-pill">
+              <Activity size={18} />
+              <span className="tab-label">Telemetry</span>
+            </div>
           </button>
         </nav>
 

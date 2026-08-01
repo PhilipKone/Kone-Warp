@@ -1382,18 +1382,67 @@ html, body, #root {
   }
 
   .app-bottom-navbar {
-    background: rgba(18, 18, 26, 0.95);
-    backdrop-filter: blur(20px);
-    width: 100%;
+    display: flex;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 36px);
+    max-width: 440px;
+    height: 64px;
+    background: rgba(18, 18, 26, 0.94);
+    border: 1.5px solid rgba(236, 72, 153, 0.28);
+    border-radius: 36px;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 9999;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.75),
+                0 0 20px rgba(236, 72, 153, 0.15);
+    padding: 0 6px;
     pointer-events: auto;
-    z-index: 30;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar-tab-item {
+    background: none;
+    border: none;
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .navbar-tab-item .mobile-icon-pill {
+    padding: 7px 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 22px;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+  }
+
+  .navbar-tab-item.active .mobile-icon-pill {
+    background: rgba(236, 72, 153, 0.18);
+    border: 1px solid rgba(236, 72, 153, 0.4);
+    color: #f472b6;
+    box-shadow: 0 0 18px rgba(236, 72, 153, 0.25);
+    transform: scale(1.04);
+  }
+
+  .navbar-tab-item:active {
+    transform: scale(0.92);
   }
 
   /* Transform scroll content into a floating bottom sheet */
   .sidebar-scroll-content {
     position: absolute;
-    bottom: 80px; /* Sits above navbar */
+    bottom: 96px; /* Sits cleanly above floating bottom navbar */
     left: 0;
     width: 100%;
     background: rgba(18, 18, 26, 0.95);
