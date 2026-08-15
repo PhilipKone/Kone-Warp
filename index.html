@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Kone Warp | Next-Gen Delivery & Rideshare</title>
     <link rel="icon" type="image/svg+xml" href="/logos/logo.svg" />
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
@@ -85,6 +85,44 @@
       }
     </script>
 
+    <!-- LLM Context & Agentic Discovery -->
+    <link rel="help" type="text/markdown" href="/llms.txt" />
+    <meta name="ai-agent" content="enabled" />
+
+    <script type="application/webmcp+json">
+      {
+        "tools": [
+          {
+            "name": "calculate_warp_fare",
+            "description": "Calculates estimated dispatch or rideshare fares across vehicle modes (EV Bike, Warp Eco, Agro-Cargo, Aero Warp) based on distance and traffic density.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "distanceKm": {
+                  "type": "number",
+                  "description": "Distance in kilometers"
+                },
+                "rideType": {
+                  "type": "string",
+                  "enum": ["bike", "eco", "cargo", "plane"],
+                  "description": "Vehicle mode"
+                }
+              },
+              "required": ["distanceKm", "rideType"]
+            }
+          },
+          {
+            "name": "get_fleet_status",
+            "description": "Returns the live active fleet telemetry count, average battery percentage, and dispatch readiness in Accra and Volta transit corridors.",
+            "parameters": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        ]
+      }
+    </script>
+
     <!-- iOS / Apple Native App Styling -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -95,7 +133,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
     <style>
       html, body {
         margin: 0;
@@ -115,8 +152,8 @@
         align-items: center;
       }
     </style>
-    <script type="module" crossorigin src="/assets/index-TpWWqpKk.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DnO9Z1-j.css">
+    <script type="module" crossorigin src="/assets/index-BRuhdovn.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BfgL-_Fs.css">
   </head>
   <body>
     <div id="root"></div>
