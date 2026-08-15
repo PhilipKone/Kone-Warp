@@ -15,6 +15,7 @@ import {
 import {
   subscribeToAuth, loginWithEmail, registerWithEmail, logoutUser
 } from '../services/authService';
+import 'leaflet/dist/leaflet.css';
 import './KoneWarp.css';
 
 // Predefined mock locations in Accra/Volta Region with actual Latitude & Longitude
@@ -722,6 +723,9 @@ export default function KoneWarp() {
                     <div className="route-node autocomplete-container">
                       <MapPin className="pin-pickup" size={16} />
                       <input 
+                        id="warp-pickup-input"
+                        name="pickupAddress"
+                        aria-label="Pickup address"
                         type="text"
                         placeholder="Pickup address..."
                         value={pickupQuery}
@@ -762,6 +766,9 @@ export default function KoneWarp() {
                     <div className="route-node autocomplete-container">
                       <MapPin className="pin-dropoff" size={16} />
                       <input 
+                        id="warp-dropoff-input"
+                        name="dropoffAddress"
+                        aria-label="Dropoff address"
                         type="text"
                         placeholder="Dropoff address..."
                         value={dropoffQuery}
@@ -1461,8 +1468,10 @@ export default function KoneWarp() {
                 
                 <form onSubmit={handleAuthSubmit} className="auth-form">
                   <div className="auth-input-group">
-                    <label>Email Address</label>
+                    <label htmlFor="warp-auth-email">Email Address</label>
                     <input 
+                      id="warp-auth-email"
+                      name="email"
                       type="email" 
                       placeholder="name@koneacademy.io" 
                       value={authEmail} 
@@ -1471,8 +1480,10 @@ export default function KoneWarp() {
                     />
                   </div>
                   <div className="auth-input-group">
-                    <label>Password</label>
+                    <label htmlFor="warp-auth-password">Password</label>
                     <input 
+                      id="warp-auth-password"
+                      name="password"
                       type="password" 
                       placeholder="••••••••" 
                       value={authPassword} 

@@ -16,14 +16,18 @@ let db;
 let auth;
 
 try {
-    app = initializeApp(firebaseConfig);
-    db = getFirestore(app);
-    db.app = app; // Attach app reference for checking initialized state
-    auth = getAuth(app);
+    if (firebaseConfig.projectId) {
+        app = initializeApp(firebaseConfig);
+        db = getFirestore(app);
+        auth = getAuth(app);
+    } else {
+        db = null;
+        auth = null;
+    }
 } catch (error) {
     console.error('Firebase initialization error in Kone-Warp:', error);
-    db = {};
-    auth = {};
+    db = null;
+    auth = null;
 }
 
 export { db, auth };
