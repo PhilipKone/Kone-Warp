@@ -348,8 +348,16 @@ export default function KoneWarp() {
         });
 
         // Beautiful dark themed tile grids (OSM powered)
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-          maxZoom: 20
+        if (!document.getElementById('kone-warp-dark-tile-style')) {
+          const style = document.createElement('style');
+          style.id = 'kone-warp-dark-tile-style';
+          style.textContent = '.kone-warp-dark-tiles { filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%); }';
+          document.head.appendChild(style);
+        }
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          className: 'kone-warp-dark-tiles'
         }).addTo(map);
 
         mapRef.current = map;
