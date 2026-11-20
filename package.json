@@ -2,7 +2,7 @@
   "name": "Kone-Warp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://warp.koneacademy.io",
+  "homepage": "https://warp.codkon.com",
   "type": "module",
   "scripts": {
     "dev": "vite --port 5176",

@@ -666,7 +666,7 @@ export default function KoneWarp() {
         {/* Header */}
         <header className="app-top-header">
           <div className="logo-section">
-            <button className="header-back-btn" onClick={() => window.location.href = 'https://koneacademy.io'} aria-label="Back to Hub">
+            <button className="header-back-btn" onClick={() => window.location.href = 'https://academy.codkon.com'} aria-label="Back to Hub">
               <ArrowLeft size={16} />
             </button>
             {activeTab === 'ride' && <img src="/logos/logo.svg" className="logo-sparkle" style={{ width: '20px', height: '20px', objectFit: 'contain' }} alt="Kone Warp Logo" />}
