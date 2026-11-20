@@ -13,12 +13,12 @@ Kone Warp provides intelligent delivery and ridesharing transportation infrastru
 
 ## Parent Ecosystem & Federated Links
 
-- [Kone Academy (Hub)](https://www.koneacademy.io/): Central learning portal and technology group.
-- [Kone Technologies (Parent)](https://tech.koneacademy.io/): Corporate holding organization.
-- [Kone Lab (Hardware)](https://lab.koneacademy.io/): Prototyping IoT GPS beacons and vehicle micro-controllers.
-- [Kone Farms (Agritech)](https://farms.koneacademy.io/): Farm-to-kitchen logistics and supply chain routes.
-- [Kone Code (Engineering)](https://code.koneacademy.io/): Backend dispatch algorithms and real-time mapping engine.
-- [Kone Consult (Research)](https://consult.koneacademy.io/): Traffic density analyses and urban logistics telemetry.
+- [Kone Academy (Hub)](https://academy.codkon.com/): Central learning portal and technology group.
+- [Kone Technologies (Parent)](https://tech.codkon.com/): Corporate holding organization.
+- [Kone Lab (Hardware)](https://lab.codkon.com/): Prototyping IoT GPS beacons and vehicle micro-controllers.
+- [Kone Farms (Agritech)](https://farms.codkon.com/): Farm-to-kitchen logistics and supply chain routes.
+- [Kone Code (Engineering)](https://code.codkon.com/): Backend dispatch algorithms and real-time mapping engine.
+- [Kone Consult (Research)](https://consult.codkon.com/): Traffic density analyses and urban logistics telemetry.
 
 ## System Architecture
 
